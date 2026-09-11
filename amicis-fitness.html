@@ -1,0 +1,1252 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="AMICIS FITNESS — moda fitness de fabricação própria. Tecido premium, compressão perfeita. Varejo e atacado.">
+<meta name="theme-color" content="#99BCC2">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%2399BCC2'/%3E%3Ctext x='32' y='40' font-family='Georgia,serif' font-size='22' letter-spacing='1' text-anchor='middle' fill='%23E6E4D7'%3EA%3C/text%3E%3C/svg%3E">
+<style>
+  :root{color-scheme:light dark}
+  html,body{margin:0;padding:0}
+  img{max-width:100%}
+  [hidden]{display:none!important}
+</style>
+</head>
+<body>
+<title>AMICIS FITNESS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap">
+
+<style>
+/* ============================================================
+   AMICIS FITNESS — design system
+   Cores extraídas do perfil @amicisfitness (logo: #99BCC2 / #E6E4D7)
+   ============================================================ */
+:root{
+  --display:"Cormorant Garamond", "Times New Roman", serif;
+  --body:"Jost", "Helvetica Neue", Arial, sans-serif;
+
+  --paper:#F7F6F1;
+  --surface:#FFFFFF;
+  --surface-2:#EEECE3;
+  --ink:#1A2422;
+  --ink-2:#4C5856;
+  --ink-3:#7E8987;
+  --line:#DCD9CE;
+  --line-soft:#E8E5DB;
+  --sage:#99BCC2;
+  --sage-hi:#AECDD2;
+  --sage-deep:#3F6B75;
+  --sage-soft:#E6F0F2;
+  --cream:#E6E4D7;
+  --on-sage:#152D2F;
+  --shadow:0 1px 2px rgba(26,36,34,.05), 0 12px 32px -18px rgba(26,36,34,.28);
+
+  --r-s:2px; --r-m:3px;
+  --pad:clamp(20px, 5vw, 72px);
+  --maxw:1280px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0F1514;
+    --surface:#151D1C;
+    --surface-2:#1C2523;
+    --ink:#EDEAE0;
+    --ink-2:#A9B3B0;
+    --ink-3:#7C8785;
+    --line:#2A3432;
+    --line-soft:#212B29;
+    --sage:#9FC3C9;
+    --sage-hi:#B7D6DB;
+    --sage-deep:#B9D6DA;
+    --sage-soft:#1A2A2C;
+    --cream:#E6E4D7;
+    --on-sage:#0E1413;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 12px 32px -18px rgba(0,0,0,.7);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0F1514;
+  --surface:#151D1C;
+  --surface-2:#1C2523;
+  --ink:#EDEAE0;
+  --ink-2:#A9B3B0;
+  --ink-3:#7C8785;
+  --line:#2A3432;
+  --line-soft:#212B29;
+  --sage:#9FC3C9;
+  --sage-hi:#B7D6DB;
+  --sage-deep:#B9D6DA;
+  --sage-soft:#1A2A2C;
+  --cream:#E6E4D7;
+  --on-sage:#0E1413;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 12px 32px -18px rgba(0,0,0,.7);
+}
+
+*{box-sizing:border-box}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--body);
+  font-weight:300;
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--sage-deep);outline-offset:3px;border-radius:1px}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+}
+
+/* ---------- primitives ---------- */
+.wrap{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:var(--pad)}
+.eyebrow{
+  font-size:11px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--ink-3);
+}
+.serif{font-family:var(--display);font-weight:300;line-height:1.06;letter-spacing:-.005em;text-wrap:balance}
+h1.serif{font-size:clamp(38px,6.2vw,76px)}
+h2.serif{font-size:clamp(30px,4.4vw,52px)}
+h3.serif{font-size:clamp(22px,2.6vw,30px)}
+p{margin:0}
+.lede{font-size:clamp(15px,1.5vw,18px);color:var(--ink-2);max-width:60ch}
+.rule{height:1px;background:var(--line);border:0;margin:0}
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:15px 30px;border-radius:var(--r-s);
+  font-size:12px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;
+  transition:background .22s ease,color .22s ease,border-color .22s ease,transform .22s ease;
+  border:1px solid transparent;white-space:nowrap;
+}
+.btn--solid{background:var(--ink);color:var(--paper)}
+.btn--solid:hover{background:var(--sage-deep);color:#fff}
+.btn--ghost{border-color:currentColor;color:inherit}
+.btn--ghost:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.btn--sage{background:var(--sage);color:var(--on-sage)}
+.btn--sage:hover{background:var(--sage-hi)}
+.btn[disabled]{opacity:.4;cursor:not-allowed}
+.btn[disabled]:hover{background:var(--ink);color:var(--paper)}
+.btn--block{width:100%}
+
+.link-u{
+  font-size:12px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;
+  border-bottom:1px solid currentColor;padding-bottom:3px;display:inline-block;
+  transition:opacity .2s ease
+}
+.link-u:hover{opacity:.6}
+
+/* ---------- logo ---------- */
+.logo{display:flex;flex-direction:column;align-items:center;line-height:1}
+.logo b{
+  font-family:var(--display);font-weight:400;letter-spacing:.14em;
+  font-size:var(--ls,19px);text-indent:.14em;
+}
+.logo i{
+  font-style:normal;font-family:var(--body);font-weight:400;
+  font-size:calc(var(--ls,19px) * .27);letter-spacing:.44em;text-indent:.44em;
+  margin-top:calc(var(--ls,19px) * .14);opacity:.85;
+}
+
+/* ---------- header ---------- */
+.hdr{
+  position:sticky;top:0;z-index:60;
+  background:color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter:saturate(1.4) blur(14px);
+  border-bottom:1px solid var(--line-soft);
+}
+.hdr__bar{
+  display:flex;align-items:center;gap:20px;
+  height:74px;
+}
+.hdr__brand{margin-right:auto}
+.nav{display:flex;align-items:center;gap:28px}
+.nav a{
+  font-size:12px;font-weight:400;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--ink-2);padding:6px 0;position:relative;transition:color .2s ease
+}
+.nav a::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:1px;
+  background:var(--ink);transform:scaleX(0);transform-origin:left;transition:transform .26s ease
+}
+.nav a:hover{color:var(--ink)}
+.nav a:hover::after,.nav a[aria-current="page"]::after{transform:scaleX(1)}
+.nav a[aria-current="page"]{color:var(--ink)}
+.hdr__acts{display:flex;align-items:center;gap:6px}
+.iconbtn{
+  width:42px;height:42px;display:grid;place-items:center;border-radius:50%;
+  transition:background .2s ease;position:relative;color:var(--ink)
+}
+.iconbtn:hover{background:var(--surface-2)}
+.iconbtn svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round}
+.badge{
+  position:absolute;top:5px;right:4px;min-width:17px;height:17px;padding:0 4px;
+  background:var(--sage-deep);color:#fff;border-radius:9px;
+  font-size:10px;font-weight:500;display:grid;place-items:center;line-height:1;
+  font-variant-numeric:tabular-nums
+}
+.badge[hidden]{display:none!important}
+.burger{display:none}
+@media (max-width:900px){
+  .nav{
+    display:none;position:absolute;top:74px;left:0;right:0;
+    flex-direction:column;align-items:stretch;gap:0;
+    background:var(--paper);border-bottom:1px solid var(--line);padding:8px var(--pad) 22px
+  }
+  .nav.open{display:flex}
+  .nav a{padding:14px 0;border-bottom:1px solid var(--line-soft);font-size:13px}
+  .nav a::after{display:none}
+  .burger{display:grid}
+}
+
+/* announcement bar */
+.annc{
+  background:var(--ink);color:var(--paper);
+  font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  text-align:center;padding:9px 16px;font-weight:400
+}
+.annc b{font-weight:500;color:var(--sage)}
+
+/* ---------- hero ---------- */
+.hero{display:grid;grid-template-columns:1.06fr .94fr;min-height:min(78vh,720px);border-bottom:1px solid var(--line)}
+.hero__copy{
+  display:flex;flex-direction:column;justify-content:center;gap:26px;
+  padding:clamp(44px,6vw,88px) clamp(20px,5vw,84px);
+}
+.hero__copy h1{max-width:13ch}
+.hero__ctas{display:flex;flex-wrap:wrap;gap:12px}
+.hero__pillars{display:flex;flex-wrap:wrap;gap:10px 26px;padding-top:10px;border-top:1px solid var(--line)}
+.hero__pillars span{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
+.hero__mark{
+  background:var(--sage);color:var(--on-sage);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;
+  padding:56px 24px;position:relative;overflow:hidden;
+}
+.hero__mark::before{
+  content:"";position:absolute;inset:-20%;
+  background:radial-gradient(60% 55% at 50% 38%, rgba(255,255,255,.34), transparent 70%);
+}
+.hero__disc{
+  position:relative;width:min(58%,340px);aspect-ratio:1;border-radius:50%;
+  border:1px solid rgba(230,228,215,.75);
+  background:linear-gradient(160deg, rgba(255,255,255,.16), rgba(21,45,47,.07));
+  display:grid;place-items:center;color:var(--cream);
+}
+.hero__cap{
+  position:absolute;bottom:26px;left:0;right:0;text-align:center;
+  font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--on-sage);opacity:.62
+}
+@media (max-width:860px){
+  .hero{grid-template-columns:1fr}
+  .hero__mark{order:-1;min-height:330px;padding:52px 24px 62px}
+  .hero__disc{width:min(62%,250px)}
+}
+
+/* ---------- marquee ---------- */
+.marq{background:var(--ink);color:var(--cream);overflow:hidden;padding:15px 0}
+.marq__track{display:flex;gap:0;width:max-content;animation:slide 38s linear infinite}
+.marq:hover .marq__track{animation-play-state:paused}
+.marq span{
+  font-family:var(--display);font-style:italic;font-size:19px;
+  padding-inline:26px;white-space:nowrap;opacity:.92
+}
+.marq span::after{content:"✦";font-style:normal;font-size:10px;margin-left:26px;vertical-align:3px;opacity:.5}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ---------- section shell ---------- */
+.sec{padding-block:clamp(56px,7vw,104px)}
+.sec--tight{padding-block:clamp(40px,5vw,68px)}
+.sec__head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:clamp(26px,3vw,42px)}
+.sec__head .eyebrow{margin-bottom:10px;display:block}
+
+/* ---------- product grid ---------- */
+.grid{display:grid;gap:clamp(18px,2.4vw,34px) clamp(14px,1.8vw,24px)}
+.grid > *,.duo > *,.pdp > *,.hero > *,.ft__grid > *{min-width:0}
+.grid--4{grid-template-columns:repeat(4,1fr)}
+.grid--3{grid-template-columns:repeat(3,1fr)}
+@media (max-width:1000px){.grid--4{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:760px){.grid--4,.grid--3{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:420px){.grid--4,.grid--3{grid-template-columns:1fr}}
+
+.card{display:flex;flex-direction:column;gap:13px;position:relative}
+.card__media{position:relative;overflow:hidden;background:var(--surface-2)}
+.card__media .ph{transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.card:hover .ph{transform:scale(1.035)}
+.card__tag{
+  position:absolute;top:12px;left:12px;z-index:2;
+  background:var(--paper);color:var(--ink);
+  font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:500;
+  padding:5px 10px;border-radius:var(--r-s)
+}
+.card__tag--sage{background:var(--sage);color:var(--on-sage)}
+.card__body{display:flex;flex-direction:column;gap:5px}
+.card__cat{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3)}
+.card__name{font-family:var(--display);font-size:20px;font-weight:400;line-height:1.2}
+.card__price{font-size:14px;font-weight:400;color:var(--ink-2);font-variant-numeric:tabular-nums;display:flex;gap:9px;align-items:baseline}
+.card__price s{color:var(--ink-3);font-size:12px}
+.card__swatches{display:flex;gap:5px;margin-top:3px}
+.sw{width:13px;height:13px;border-radius:50%;border:1px solid var(--line);flex:none}
+
+/* ---------- fabric placeholder ---------- */
+.ph{
+  position:relative;aspect-ratio:3/4;overflow:hidden;
+  background:linear-gradient(157deg, var(--c1,#B9C7C5) 0%, var(--c2,#8FA3A1) 100%);
+}
+.ph::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(72% 48% at 50% 22%, rgba(255,255,255,.30), transparent 72%),
+    repeating-linear-gradient(114deg, rgba(255,255,255,.16) 0 1px, rgba(0,0,0,0) 1px 8px);
+}
+.ph::after{
+  content:"AMICIS";position:absolute;inset:0;display:grid;place-items:center;
+  font-family:var(--display);font-weight:400;
+  font-size:clamp(13px,2.1vw,19px);letter-spacing:.5em;text-indent:.5em;
+  color:var(--wm,rgba(255,255,255,.44));
+}
+.ph--tall{aspect-ratio:4/5}
+.ph--sq{aspect-ratio:1}
+
+/* ---------- categorias ---------- */
+.cats{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+@media (max-width:900px){.cats{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:520px){.cats{grid-template-columns:repeat(2,1fr)}}
+.cat{
+  display:flex;flex-direction:column;justify-content:flex-end;
+  aspect-ratio:4/5;padding:16px;position:relative;overflow:hidden;
+  border-radius:var(--r-s);color:#FFF;min-width:0;
+  background:linear-gradient(157deg, var(--c1,#B9C7C5), var(--c2,#8FA3A1));
+  transition:transform .3s cubic-bezier(.2,.7,.2,1)
+}
+.cat::before{
+  content:"";position:absolute;inset:0;
+  background:
+    linear-gradient(180deg, rgba(12,20,19,0) 38%, rgba(12,20,19,.66) 100%),
+    repeating-linear-gradient(114deg, rgba(255,255,255,.13) 0 1px, rgba(0,0,0,0) 1px 8px);
+}
+.cat > *{position:relative;z-index:1}
+.cat:hover{transform:translateY(-4px)}
+.cat b{font-family:var(--display);font-weight:400;font-size:20px;line-height:1.15;text-shadow:0 1px 12px rgba(0,0,0,.35)}
+.cat span{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.76);margin-top:3px}
+
+/* ---------- editorial band ---------- */
+.edit{background:var(--sage);color:var(--on-sage)}
+.edit__in{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,72px);align-items:center;padding-block:clamp(54px,7vw,96px)}
+.edit blockquote{margin:0;font-family:var(--display);font-weight:300;font-size:clamp(30px,4.2vw,50px);line-height:1.1;text-wrap:balance}
+.edit p{color:color-mix(in srgb, var(--on-sage) 76%, transparent);max-width:52ch}
+.edit__col{display:flex;flex-direction:column;gap:22px;align-items:flex-start}
+@media (max-width:820px){.edit__in{grid-template-columns:1fr}}
+
+/* ---------- duas colunas de destaque ---------- */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2vw,24px)}
+@media (max-width:820px){.duo{grid-template-columns:1fr}}
+.panel{
+  border:1px solid var(--line);border-radius:var(--r-s);padding:clamp(26px,3.4vw,44px);
+  display:flex;flex-direction:column;gap:16px;align-items:flex-start;background:var(--surface);min-width:0
+}
+.panel--ink{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.panel--ink .eyebrow{color:var(--sage)}
+.panel--ink p{color:color-mix(in srgb, var(--paper) 72%, transparent)}
+.panel ul{margin:0;padding-left:18px;color:var(--ink-2);display:flex;flex-direction:column;gap:7px;font-size:15px}
+.panel--ink ul{color:color-mix(in srgb, var(--paper) 72%, transparent)}
+
+/* ---------- tabela de medidas ---------- */
+.tablewrap{overflow-x:auto;max-width:100%;border:1px solid var(--line);border-radius:var(--r-s);background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:460px;font-size:14px}
+th,td{padding:14px 18px;text-align:left;border-bottom:1px solid var(--line-soft);font-variant-numeric:tabular-nums}
+thead th{
+  font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;
+  color:var(--ink-3);background:var(--surface-2)
+}
+tbody tr:last-child td{border-bottom:0}
+tbody th{font-family:var(--display);font-size:18px;font-weight:400}
+
+/* ---------- footer ---------- */
+.ft{background:var(--ink);color:var(--paper);padding-block:clamp(48px,6vw,76px) 26px;margin-top:auto}
+.ft__grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.3fr;gap:clamp(26px,4vw,52px)}
+@media (max-width:900px){.ft__grid{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.ft__grid{grid-template-columns:1fr}}
+.ft h4{
+  margin:0 0 16px;font-size:10px;letter-spacing:.22em;text-transform:uppercase;
+  font-weight:500;color:var(--sage)
+}
+.ft ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px}
+.ft a,.ft li{font-size:14px;color:color-mix(in srgb, var(--paper) 68%, transparent);transition:color .2s ease}
+.ft a:hover{color:var(--paper)}
+.ft__bottom{
+  margin-top:clamp(34px,4vw,56px);padding-top:20px;
+  border-top:1px solid color-mix(in srgb, var(--paper) 16%, transparent);
+  display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between;
+  font-size:11px;letter-spacing:.1em;color:color-mix(in srgb, var(--paper) 52%, transparent)
+}
+
+/* ---------- página loja ---------- */
+.pagehead{padding-block:clamp(38px,5vw,64px) clamp(22px,3vw,34px);border-bottom:1px solid var(--line)}
+.crumbs{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin-bottom:14px}
+.crumbs a:hover{color:var(--ink)}
+.filters{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding-block:22px}
+.chip{
+  padding:9px 17px;border:1px solid var(--line);border-radius:100px;
+  font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-2);
+  transition:all .2s ease;background:var(--surface)
+}
+.chip:hover{border-color:var(--ink-3);color:var(--ink)}
+.chip[aria-current="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.sortwrap{margin-left:auto;display:flex;align-items:center;gap:10px}
+select{
+  font:inherit;font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+  background:var(--surface);color:var(--ink);border:1px solid var(--line);
+  border-radius:var(--r-s);padding:10px 14px;cursor:pointer
+}
+.count{font-size:12px;letter-spacing:.1em;color:var(--ink-3);text-transform:uppercase}
+@media (max-width:620px){.sortwrap{margin-left:0;width:100%}select{flex:1}}
+
+/* ---------- página produto ---------- */
+.pdp{display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(26px,4vw,64px);padding-block:clamp(30px,4vw,52px)}
+@media (max-width:900px){.pdp{grid-template-columns:1fr}}
+.pdp__gal{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.pdp__gal > :first-child{grid-column:1 / -1;max-height:min(76vh,720px)}
+.pdp__info{display:flex;flex-direction:column;gap:22px;align-self:start;position:sticky;top:100px}
+@media (max-width:900px){.pdp__info{position:static}}
+.pdp__price{font-size:24px;font-family:var(--display);font-variant-numeric:tabular-nums;display:flex;gap:12px;align-items:baseline}
+.pdp__price s{font-size:16px;color:var(--ink-3);font-family:var(--body)}
+.pdp__parc{font-size:13px;color:var(--ink-3)}
+.optrow{display:flex;flex-direction:column;gap:11px}
+.optrow__lbl{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3);display:flex;justify-content:space-between;align-items:center}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.size{
+  min-width:52px;padding:12px 14px;border:1px solid var(--line);border-radius:var(--r-s);
+  font-size:12px;letter-spacing:.1em;text-align:center;background:var(--surface);transition:all .18s ease
+}
+.size:hover{border-color:var(--ink-3)}
+.size[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.color{
+  display:flex;align-items:center;gap:9px;padding:8px 14px 8px 9px;
+  border:1px solid var(--line);border-radius:100px;background:var(--surface);
+  font-size:12px;letter-spacing:.06em;transition:all .18s ease
+}
+.color:hover{border-color:var(--ink-3)}
+.color[aria-pressed="true"]{border-color:var(--ink)}
+.color i{width:17px;height:17px;border-radius:50%;border:1px solid var(--line);flex:none}
+.qty{align-self:flex-start;display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:var(--r-s);background:var(--surface)}
+.qty button{width:42px;height:46px;font-size:17px;color:var(--ink-2)}
+.qty button:hover{color:var(--ink)}
+.qty output{width:40px;text-align:center;font-variant-numeric:tabular-nums;font-size:15px}
+.buyrow{display:flex;gap:10px;flex-wrap:wrap}
+.buyrow .btn{flex:1;min-width:180px}
+.note{
+  font-size:12px;color:var(--ink-3);display:flex;gap:8px;align-items:flex-start;
+  background:var(--sage-soft);border-radius:var(--r-s);padding:12px 14px;line-height:1.5
+}
+.note b{color:var(--sage-deep);font-weight:500}
+.acc{border-top:1px solid var(--line)}
+.acc details{border-bottom:1px solid var(--line)}
+.acc summary{
+  padding:17px 0;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;
+  font-size:12px;letter-spacing:.14em;text-transform:uppercase
+}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary::after{content:"+";font-size:17px;color:var(--ink-3);font-weight:300}
+.acc details[open] summary::after{content:"–"}
+.acc .accbody{padding-bottom:18px;color:var(--ink-2);font-size:15px;line-height:1.65;max-width:58ch}
+.trust{display:flex;flex-wrap:wrap;gap:8px 22px;padding-top:4px}
+.trust span{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+
+/* ---------- sacola (drawer) ---------- */
+.scrim{position:fixed;inset:0;background:rgba(20,28,26,.42);z-index:90;opacity:0;pointer-events:none;transition:opacity .3s ease}
+.scrim.on{opacity:1;pointer-events:auto}
+.bag{
+  position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);z-index:100;
+  background:var(--paper);border-left:1px solid var(--line);
+  display:flex;flex-direction:column;transform:translateX(101%);
+  transition:transform .38s cubic-bezier(.3,.8,.25,1)
+}
+.bag.on{transform:none}
+.bag__top{display:flex;align-items:center;justify-content:space-between;padding:22px var(--bagpad,24px);border-bottom:1px solid var(--line)}
+.bag__top h3{margin:0;font-family:var(--display);font-weight:400;font-size:23px}
+.bag__list{flex:1;overflow-y:auto;padding:6px var(--bagpad,24px);display:flex;flex-direction:column}
+.bagitem{display:grid;grid-template-columns:68px 1fr auto;gap:14px;padding:18px 0;border-bottom:1px solid var(--line-soft);align-items:start}
+.bagitem__n{font-family:var(--display);font-size:17px;line-height:1.25}
+.bagitem__m{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-top:3px}
+.bagitem__p{font-size:14px;font-variant-numeric:tabular-nums;text-align:right}
+.bagitem__x{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-top:8px;display:block;text-align:right}
+.bagitem__x:hover{color:var(--ink)}
+.bag__empty{padding:70px 10px;text-align:center;color:var(--ink-3);display:flex;flex-direction:column;gap:16px;align-items:center}
+.bag__foot{padding:20px var(--bagpad,24px) 26px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:14px}
+.bag__sum{display:flex;justify-content:space-between;align-items:baseline}
+.bag__sum b{font-family:var(--display);font-weight:400;font-size:24px;font-variant-numeric:tabular-nums}
+
+/* ---------- forms ---------- */
+.form{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form .full{grid-column:1 / -1}
+@media (max-width:620px){.form{grid-template-columns:1fr}}
+label.field{display:flex;flex-direction:column;gap:7px}
+label.field span{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
+input,textarea{
+  font:inherit;font-size:15px;background:var(--surface);color:var(--ink);
+  border:1px solid var(--line);border-radius:var(--r-s);padding:13px 15px;width:100%
+}
+input::placeholder,textarea::placeholder{color:var(--ink-3)}
+textarea{min-height:120px;resize:vertical}
+
+/* ---------- utilidades de página ---------- */
+.stack{display:flex;flex-direction:column;gap:clamp(14px,2vw,22px);align-items:flex-start}
+.center{text-align:center;align-items:center}
+.toast{
+  position:fixed;left:50%;bottom:26px;transform:translate(-50%,20px);z-index:120;
+  background:var(--ink);color:var(--paper);padding:13px 22px;border-radius:100px;
+  font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+  opacity:0;pointer-events:none;transition:opacity .25s ease,transform .25s ease;
+  box-shadow:var(--shadow)
+}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+</style>
+
+<div class="annc">Frete grátis acima de R$ 399 para todo o Brasil &nbsp;·&nbsp; <b>Atacado a partir de 12 peças</b></div>
+
+<header class="hdr">
+  <div class="wrap hdr__bar">
+    <a class="hdr__brand" href="#/" aria-label="AMICIS FITNESS — início">
+      <span class="logo" style="--ls:21px"><b>AMICIS</b><i>FITNESS</i></span>
+    </a>
+
+    <nav class="nav" id="nav">
+      <a href="#/loja" data-route="/loja">Loja</a>
+      <a href="#/loja?cat=conjuntos" data-route="/loja?cat=conjuntos">Conjuntos</a>
+      <a href="#/loja?cat=leggings" data-route="/loja?cat=leggings">Leggings</a>
+      <a href="#/sobre" data-route="/sobre">A marca</a>
+      <a href="#/atacado" data-route="/atacado">Atacado</a>
+      <a href="#/contato" data-route="/contato">Contato</a>
+    </nav>
+
+    <div class="hdr__acts">
+      <button class="iconbtn burger" id="burger" aria-label="Abrir menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
+      </button>
+      <button class="iconbtn" id="openBag" aria-label="Abrir sacola">
+        <svg viewBox="0 0 24 24"><path d="M6 7h12l1.2 13H4.8L6 7Z"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/></svg>
+        <span class="badge" id="bagCount" hidden>0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="view"></main>
+
+<footer class="ft">
+  <div class="wrap">
+    <div class="ft__grid">
+      <div>
+        <span class="logo" style="--ls:26px;align-items:flex-start;color:var(--cream)"><b>AMICIS</b><i>FITNESS</i></span>
+        <p style="margin-top:18px;max-width:32ch;font-size:14px;color:color-mix(in srgb, var(--paper) 68%, transparent)">
+          Moda fitness de fabricação própria. Tecido premium, compressão perfeita e caimento pensado para o corpo real.
+        </p>
+      </div>
+      <div>
+        <h4>Loja</h4>
+        <ul>
+          <li><a href="#/loja">Todas as peças</a></li>
+          <li><a href="#/loja?cat=conjuntos">Conjuntos</a></li>
+          <li><a href="#/loja?cat=leggings">Leggings</a></li>
+          <li><a href="#/loja?cat=tops">Tops</a></li>
+          <li><a href="#/loja?cat=macacoes">Macacões</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Institucional</h4>
+        <ul>
+          <li><a href="#/sobre">A marca</a></li>
+          <li><a href="#/atacado">Atacado & revenda</a></li>
+          <li><a href="#/sobre?ir=provador">Guia de medidas</a></li>
+          <li><a href="#/contato">Trocas e devoluções</a></li>
+          <li><a href="#/contato">Contato</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Fale com a gente</h4>
+        <ul>
+          <li><a href="https://wa.me/message/7WFMNGL2ARS7D1" target="_blank" rel="noopener">WhatsApp da loja</a></li>
+          <li><a href="https://www.instagram.com/amicisfitness/" target="_blank" rel="noopener">@amicisfitness</a></li>
+          <li>Atendimento seg. a sex., 9h–18h</li>
+          <li>Goiânia · GO</li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft__bottom">
+      <span>© 2026 AMICIS FITNESS · Todos os direitos reservados</span>
+      <span>Transforme seu treino com conforto e estilo</span>
+    </div>
+  </div>
+</footer>
+
+<div class="scrim" id="scrim"></div>
+
+<aside class="bag" id="bag" aria-label="Sacola de compras" aria-hidden="true">
+  <div class="bag__top">
+    <h3>Sua sacola</h3>
+    <button class="iconbtn" id="closeBag" aria-label="Fechar sacola">
+      <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <div class="bag__list" id="bagList"></div>
+  <div class="bag__foot">
+    <div class="bag__sum"><span class="eyebrow">Subtotal</span><b id="bagTotal">R$ 0,00</b></div>
+    <div class="note">
+      <span><b>Checkout em integração.</b> O pagamento online entra no ar em breve — por enquanto a sacola serve para você montar o pedido.</span>
+    </div>
+    <button class="btn btn--solid btn--block" id="checkout" disabled>Finalizar compra</button>
+  </div>
+</aside>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+(() => {
+'use strict';
+
+/* ==========================================================
+   1. DADOS  —  troque só este bloco quando subir o catálogo
+   ========================================================== */
+
+const CORES = {
+  off:    { nome:'Off-white',     c1:'#F2EFE7', c2:'#D9D4C6', wm:'rgba(88,84,72,.30)',  sw:'#EDE9DF' },
+  preto:  { nome:'Preto',         c1:'#2C3130', c2:'#131716', wm:'rgba(255,255,255,.30)', sw:'#1B1F1E' },
+  sage:   { nome:'Verde Amicis',  c1:'#AECDD2', c2:'#7FA8B0', wm:'rgba(255,255,255,.48)', sw:'#99BCC2' },
+  chumbo: { nome:'Chumbo',        c1:'#7A8180', c2:'#4B5251', wm:'rgba(255,255,255,.32)', sw:'#5E6564' },
+  areia:  { nome:'Areia',         c1:'#DFCCB8', c2:'#BFA78E', wm:'rgba(88,68,50,.34)',  sw:'#D2BCA4' },
+  vinho:  { nome:'Vinho',         c1:'#7A4450', c2:'#4C262F', wm:'rgba(255,255,255,.30)', sw:'#67343F' }
+};
+
+const CATEGORIAS = [
+  { slug:'conjuntos', nome:'Conjuntos',         sub:'Top + baixo',       cor:'off'    },
+  { slug:'leggings',  nome:'Leggings',          sub:'Compressão',        cor:'preto'  },
+  { slug:'tops',      nome:'Tops',              sub:'Alta sustentação',  cor:'sage'   },
+  { slug:'shorts',    nome:'Shorts & Saias',    sub:'Duo layer',         cor:'chumbo' },
+  { slug:'macacoes',  nome:'Macacões & Bodies', sub:'Peça única',        cor:'vinho'  },
+  { slug:'jaquetas',  nome:'Jaquetas',          sub:'Pós-treino',        cor:'areia'  }
+];
+
+const TAM = ['PP','P','M','G','GG'];
+
+const PRODUTOS = [
+  { slug:'conjunto-ju', nome:'Conjunto Ju', cat:'conjuntos', preco:249.9, cores:['off','preto','sage'], tag:'Novo',
+    tecido:'Suplex Poliamida 360 g/m²',
+    desc:'O conjunto que abriu a Soft Era. Top de alça média com bojo removível e short de cintura alta em compressão média — clássico e sofisticado ao mesmo tempo.' },
+
+  { slug:'macacao-ju', nome:'Macacão Ju', cat:'macacoes', preco:279.9, cores:['preto','chumbo'],
+    tecido:'Duo Compress 320 g/m²',
+    desc:'Manga curta, decote quadrado e modelagem que sobe a cintura sem marcar. Peça única para quem quer resolver o look em trinta segundos.' },
+
+  { slug:'legging-compressao-alta', nome:'Legging Compressão Alta', cat:'leggings', preco:189.9, cores:['preto','chumbo','vinho'], tag:'Mais vendida',
+    tecido:'Duo Compress 320 g/m²',
+    desc:'Cós largo de 18 cm com costura anti-marquinha, compressão firme do quadril ao tornozelo e tecido opaco garantido no agachamento.' },
+
+  { slug:'top-soft-era', nome:'Top Soft Era', cat:'tops', preco:139.9, cores:['sage','off','preto'], tag:'Novo',
+    tecido:'Canelado Premium 280 g/m²',
+    desc:'Alça média, costas nadador e faixa elástica sob o busto. Sustentação para treino de força e caimento de peça de dia a dia.' },
+
+  { slug:'short-saia-duo', nome:'Short Saia Duo', cat:'shorts', preco:159.9, cores:['preto','off'],
+    tecido:'Poliamida Tec Dry 300 g/m²',
+    desc:'Saia por fora, short de compressão por dentro. Duas camadas costuradas juntas para não subir durante a corrida.' },
+
+  { slug:'conjunto-soft-era', nome:'Conjunto Soft Era', cat:'conjuntos', preco:269.9, cores:['sage','areia'], tag:'Novo',
+    tecido:'Canelado Premium 280 g/m²',
+    desc:'Canelado macio em tom terroso, top cropped e legging de cintura alta. Feito para o treino e para o café depois dele.' },
+
+  { slug:'cropped-manga-longa', nome:'Cropped Manga Longa Clássico', cat:'tops', preco:159.9, cores:['off','preto'],
+    tecido:'Canelado Premium 280 g/m²',
+    desc:'Manga longa com furo para o polegar e barra cropped na altura certa. Sobreposição que vale o ano inteiro.' },
+
+  { slug:'legging-cargo', nome:'Legging Cargo Cintura Alta', cat:'leggings', preco:209.9, cores:['chumbo','preto'],
+    tecido:'Poliamida Tec Dry 300 g/m²',
+    desc:'Dois bolsos laterais que seguram o celular sem balançar e um bolso interno no cós para o cartão.' },
+
+  { slug:'body-alca-fina', nome:'Body Alça Fina', cat:'macacoes', preco:199.9, cores:['preto','off'],
+    tecido:'Duo Compress 320 g/m²',
+    desc:'Decote em U, costas abertas e forro frontal duplo. O body que funciona de aula de dança a jeans no fim de semana.' },
+
+  { slug:'jaqueta-club', nome:'Jaqueta Corta-Vento Club', cat:'jaquetas', preco:319.9, cores:['sage','preto'],
+    tecido:'Nylon leve com forro respirável',
+    desc:'Corta-vento oversized com capuz, punho canelado e bordado Club Amicis no peito. Leve o suficiente para caber na bolsa.' },
+
+  { slug:'conjunto-run', nome:'Conjunto Run 2 em 1', cat:'conjuntos', preco:239.9, precoDe:279.9, cores:['chumbo','preto'],
+    tecido:'Poliamida Tec Dry 300 g/m²',
+    desc:'Top de sustentação alta e short 2 em 1 com compressão interna. Desenhado com quem corre de verdade, em Goiânia, a 32 graus.' },
+
+  { slug:'macaquinho-duo', nome:'Macaquinho Duo', cat:'macacoes', preco:229.9, cores:['off','vinho'],
+    tecido:'Duo Compress 320 g/m²',
+    desc:'Short curto, alça larga e costas cruzadas. Modelagem única, sem emenda na cintura, para alongar a silhueta.' }
+];
+
+const MEDIDAS = [
+  ['PP', '78–82', '58–62', '86–90',  '36'],
+  ['P',  '83–87', '63–67', '91–95',  '38'],
+  ['M',  '88–92', '68–72', '96–100', '40'],
+  ['G',  '93–98', '73–78', '101–106','42'],
+  ['GG', '99–104','79–84', '107–112','44']
+];
+
+const WHATS = 'https://wa.me/message/7WFMNGL2ARS7D1';
+const INSTA = 'https://www.instagram.com/amicisfitness/';
+
+/* ==========================================================
+   2. HELPERS
+   ========================================================== */
+
+const $  = (s, r = document) => r.querySelector(s);
+const brl = n => n.toLocaleString('pt-BR', { style:'currency', currency:'BRL' });
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const byCat = s => CATEGORIAS.find(c => c.slug === s);
+const prod  = s => PRODUTOS.find(p => p.slug === s);
+
+/** painel de tecido — substitua por <img src="..."> quando as fotos subirem */
+function ph(corKey, cls = '') {
+  const c = CORES[corKey] || CORES.sage;
+  return `<div class="ph ${cls}" style="--c1:${c.c1};--c2:${c.c2};--wm:${c.wm}" role="img" aria-label="Foto do produto na cor ${esc(c.nome)}"></div>`;
+}
+
+function cardHTML(p) {
+  const tag = p.tag ? `<span class="card__tag ${p.tag === 'Novo' ? 'card__tag--sage' : ''}">${esc(p.tag)}</span>` : '';
+  const sw = p.cores.map(k => `<i class="sw" style="background:${CORES[k].sw}" title="${esc(CORES[k].nome)}"></i>`).join('');
+  const de = p.precoDe ? `<s>${brl(p.precoDe)}</s>` : '';
+  return `<a class="card" href="#/produto/${p.slug}">
+    <div class="card__media">${tag}${ph(p.cores[0])}</div>
+    <div class="card__body">
+      <span class="card__cat">${esc(byCat(p.cat).nome)}</span>
+      <span class="card__name">${esc(p.nome)}</span>
+      <span class="card__price">${brl(p.preco)} ${de}</span>
+      <span class="card__swatches">${sw}</span>
+    </div>
+  </a>`;
+}
+
+/* ==========================================================
+   3. SACOLA (visual — sem gateway de pagamento)
+   ========================================================== */
+
+let sacola = [];
+try { sacola = JSON.parse(localStorage.getItem('amicis.sacola') || '[]'); } catch (e) { sacola = []; }
+const salvar = () => { try { localStorage.setItem('amicis.sacola', JSON.stringify(sacola)); } catch (e) {} };
+
+function addSacola(item) {
+  const i = sacola.findIndex(x => x.slug === item.slug && x.cor === item.cor && x.tam === item.tam);
+  if (i > -1) sacola[i].qtd += item.qtd; else sacola.push(item);
+  salvar(); pintarSacola(); abrirSacola();
+  aviso(`${item.nome} adicionado à sacola`);
+}
+function removeSacola(i) { sacola.splice(i, 1); salvar(); pintarSacola(); }
+
+function pintarSacola() {
+  const list = $('#bagList'), n = sacola.reduce((s, i) => s + i.qtd, 0);
+  const total = sacola.reduce((s, i) => s + i.preco * i.qtd, 0);
+  $('#bagCount').textContent = n;
+  $('#bagCount').hidden = n === 0;
+  $('#bagTotal').textContent = brl(total);
+  $('#checkout').disabled = true;
+
+  if (!sacola.length) {
+    list.innerHTML = `<div class="bag__empty">
+      <p>Sua sacola está vazia.</p>
+      <a class="btn btn--ghost" href="#/loja" data-closebag>Ver a coleção</a>
+    </div>`;
+    return;
+  }
+  list.innerHTML = sacola.map((it, i) => `<div class="bagitem">
+    ${ph(it.cor, 'ph--sq')}
+    <div>
+      <div class="bagitem__n">${esc(it.nome)}</div>
+      <div class="bagitem__m">${esc(CORES[it.cor].nome)} · Tam ${esc(it.tam)} · ${it.qtd} un.</div>
+    </div>
+    <div>
+      <div class="bagitem__p">${brl(it.preco * it.qtd)}</div>
+      <button class="bagitem__x" data-rm="${i}">Remover</button>
+    </div>
+  </div>`).join('');
+}
+
+const abrirSacola = () => { $('#bag').classList.add('on'); $('#scrim').classList.add('on'); $('#bag').setAttribute('aria-hidden','false'); };
+const fecharSacola = () => { $('#bag').classList.remove('on'); $('#scrim').classList.remove('on'); $('#bag').setAttribute('aria-hidden','true'); };
+
+let toastT;
+function aviso(msg) {
+  const t = $('#toast'); t.textContent = msg; t.classList.add('on');
+  clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove('on'), 2600);
+}
+
+/* ==========================================================
+   4. PÁGINAS
+   ========================================================== */
+
+function pageHome() {
+  const destaques = ['conjunto-ju', 'legging-compressao-alta', 'top-soft-era', 'macacao-ju'].map(prod);
+  const pilares = ['Tecido Premium','Compressão Perfeita','Fabricação Própria','Varejo & Atacado','Feito em Goiânia'];
+
+  return `
+  <section class="hero">
+    <div class="hero__copy">
+      <span class="eyebrow">Moda fitness · Goiânia · desde 2022</span>
+      <h1 class="serif">Transforme seu treino com conforto e estilo.</h1>
+      <p class="lede">Tecido premium, compressão perfeita e fabricação própria. Peças desenhadas para acompanhar o seu ritmo — do agachamento ao café depois.</p>
+      <div class="hero__ctas">
+        <a class="btn btn--solid" href="#/loja">Ver a coleção</a>
+        <a class="btn btn--ghost" href="#/atacado">Comprar no atacado</a>
+      </div>
+      <div class="hero__pillars">${pilares.map(p => `<span>${p}</span>`).join('')}</div>
+    </div>
+    <div class="hero__mark">
+      <div class="hero__disc"><span class="logo" style="--ls:clamp(30px,5vw,54px)"><b>AMICIS</b><i>FITNESS</i></span></div>
+      <span class="hero__cap">Coleção Soft Era · Verão 2026</span>
+    </div>
+  </section>
+
+  <div class="marq" aria-hidden="true">
+    <div class="marq__track">${[0,1].map(() => pilares.map(p => `<span>${p}</span>`).join('')).join('')}</div>
+  </div>
+
+  <section class="sec wrap">
+    <div class="sec__head">
+      <div>
+        <span class="eyebrow">Queridinhas da casa</span>
+        <h2 class="serif">Destaques da coleção</h2>
+      </div>
+      <a class="link-u" href="#/loja">Ver tudo</a>
+    </div>
+    <div class="grid grid--4">${destaques.map(cardHTML).join('')}</div>
+  </section>
+
+  <section class="sec sec--tight wrap">
+    <div class="sec__head"><div><span class="eyebrow">Por categoria</span><h2 class="serif">Monte seu look</h2></div></div>
+    <div class="cats">${CATEGORIAS.map(c => `
+      <a class="cat" href="#/loja?cat=${c.slug}" style="--c1:${CORES[c.cor].c1};--c2:${CORES[c.cor].c2}"><b>${esc(c.nome)}</b><span>${esc(c.sub)}</span></a>`).join('')}</div>
+  </section>
+
+  <section class="edit">
+    <div class="wrap edit__in">
+      <blockquote>Clássico ou sofisticado?<br>Na dúvida, fique com os dois.</blockquote>
+      <div class="edit__col">
+        <span class="eyebrow" style="color:inherit;opacity:.7">A Soft Era</span>
+        <p>Os looks fitness vieram para acompanhar você, e não só no treino. Canelado macio, tons terrosos e modelagens que funcionam da esteira à rua — a coleção que a gente desenhou para o dia inteiro.</p>
+        <a class="btn btn--solid" href="#/loja?cat=conjuntos">Ver os conjuntos</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec wrap">
+    <div class="duo">
+      <div class="panel panel--ink">
+        <span class="eyebrow">Club Amicis</span>
+        <h3 class="serif" style="color:inherit">Atacado e revenda direto da fábrica</h3>
+        <p>Fabricação própria significa preço de fábrica, grade fechada ou sortida e prazo que você consegue prometer para a sua cliente.</p>
+        <ul>
+          <li>Pedido mínimo de 12 peças</li>
+          <li>Tabela de preço escalonada por volume</li>
+          <li>Etiqueta neutra sob consulta</li>
+          <li>Envio para todo o Brasil</li>
+        </ul>
+        <a class="btn btn--sage" href="#/atacado">Quero a tabela de atacado</a>
+      </div>
+      <div class="panel">
+        <span class="eyebrow">Provador</span>
+        <h3 class="serif">Descubra seu tamanho sem sair de casa</h3>
+        <p>Nossa grade vai do PP ao GG com modelagem brasileira. Meça o busto, a cintura e o quadril com a fita rente ao corpo, sem apertar, e confira a tabela.</p>
+        <div class="tablewrap" style="width:100%">
+          <table>
+            <thead><tr><th>Tam.</th><th>Busto (cm)</th><th>Cintura (cm)</th><th>Quadril (cm)</th><th>Manequim</th></tr></thead>
+            <tbody>${MEDIDAS.map(r => `<tr><th scope="row">${r[0]}</th><td>${r[1]}</td><td>${r[2]}</td><td>${r[3]}</td><td>${r[4]}</td></tr>`).join('')}</tbody>
+          </table>
+        </div>
+        <a class="link-u" href="${WHATS}" target="_blank" rel="noopener">Ainda na dúvida? Fale com a gente</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec--tight wrap">
+    <div class="grid grid--4">${PRODUTOS.slice(4, 8).map(cardHTML).join('')}</div>
+    <div style="display:flex;justify-content:center;margin-top:42px">
+      <a class="btn btn--ghost" href="#/loja">Ver as 12 peças</a>
+    </div>
+  </section>`;
+}
+
+function pageLoja(params) {
+  const cat = params.get('cat');
+  const ordem = params.get('ordem') || 'destaque';
+  let lista = cat ? PRODUTOS.filter(p => p.cat === cat) : PRODUTOS.slice();
+  if (ordem === 'menor') lista.sort((a, b) => a.preco - b.preco);
+  if (ordem === 'maior') lista.sort((a, b) => b.preco - a.preco);
+  if (ordem === 'az')    lista.sort((a, b) => a.nome.localeCompare(b.nome, 'pt-BR'));
+
+  const titulo = cat ? byCat(cat).nome : 'Todas as peças';
+  const chip = (slug, nome) =>
+    `<a class="chip" href="#/loja${slug ? '?cat=' + slug : ''}" aria-current="${(cat || '') === (slug || '')}">${esc(nome)}</a>`;
+
+  return `
+  <section class="pagehead wrap">
+    <div class="crumbs"><a href="#/">Início</a> / Loja${cat ? ' / ' + esc(titulo) : ''}</div>
+    <h1 class="serif" style="font-size:clamp(34px,5vw,58px)">${esc(titulo)}</h1>
+    <p class="lede" style="margin-top:12px">Fabricação própria, tecido premium e compressão testada em treino de verdade.</p>
+  </section>
+
+  <div class="wrap">
+    <div class="filters">
+      ${chip('', 'Tudo')}${CATEGORIAS.map(c => chip(c.slug, c.nome)).join('')}
+      <div class="sortwrap">
+        <span class="count">${lista.length} ${lista.length === 1 ? 'peça' : 'peças'}</span>
+        <select id="ordem" aria-label="Ordenar por">
+          <option value="destaque" ${ordem === 'destaque' ? 'selected' : ''}>Em destaque</option>
+          <option value="menor" ${ordem === 'menor' ? 'selected' : ''}>Menor preço</option>
+          <option value="maior" ${ordem === 'maior' ? 'selected' : ''}>Maior preço</option>
+          <option value="az" ${ordem === 'az' ? 'selected' : ''}>A – Z</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <section class="sec sec--tight wrap" style="padding-top:0">
+    <div class="grid grid--4">${lista.map(cardHTML).join('')}</div>
+  </section>`;
+}
+
+function pageProduto(slug) {
+  const p = prod(slug);
+  if (!p) return pageHome();
+  const c0 = p.cores[0];
+  const relacionados = PRODUTOS.filter(x => x.slug !== p.slug && x.cat !== p.cat).slice(0, 3);
+
+  return `
+  <div class="wrap">
+    <div class="crumbs" style="padding-top:26px">
+      <a href="#/">Início</a> / <a href="#/loja">Loja</a> / <a href="#/loja?cat=${p.cat}">${esc(byCat(p.cat).nome)}</a> / ${esc(p.nome)}
+    </div>
+  </div>
+
+  <section class="wrap pdp" data-pdp="${p.slug}">
+    <div class="pdp__gal" id="gal">
+      ${ph(c0)}${ph(c0, 'ph--sq')}${ph(c0, 'ph--sq')}
+    </div>
+
+    <div class="pdp__info">
+      <div>
+        <span class="eyebrow">${esc(byCat(p.cat).nome)}</span>
+        <h1 class="serif" style="font-size:clamp(30px,4vw,44px);margin-top:8px">${esc(p.nome)}</h1>
+      </div>
+
+      <div>
+        <div class="pdp__price">${brl(p.preco)} ${p.precoDe ? `<s>${brl(p.precoDe)}</s>` : ''}</div>
+        <div class="pdp__parc">ou 6x de ${brl(p.preco / 6)} sem juros</div>
+      </div>
+
+      <p class="lede" style="font-size:16px">${esc(p.desc)}</p>
+
+      <div class="optrow">
+        <span class="optrow__lbl"><span>Cor: <strong id="corNome" style="font-weight:400;letter-spacing:.04em;text-transform:none;color:var(--ink)">${esc(CORES[c0].nome)}</strong></span></span>
+        <div class="opts" id="cores">
+          ${p.cores.map((k, i) => `<button class="color" data-cor="${k}" aria-pressed="${i === 0}">
+            <i style="background:${CORES[k].sw}"></i>${esc(CORES[k].nome)}</button>`).join('')}
+        </div>
+      </div>
+
+      <div class="optrow">
+        <span class="optrow__lbl">Tamanho <a class="link-u" style="font-size:10px" href="#/sobre?ir=provador">Guia de medidas</a></span>
+        <div class="opts" id="tams">
+          ${TAM.map((t, i) => `<button class="size" data-tam="${t}" aria-pressed="${i === 2}">${t}</button>`).join('')}
+        </div>
+      </div>
+
+      <div class="optrow">
+        <span class="optrow__lbl">Quantidade</span>
+        <div class="qty">
+          <button id="qMinus" aria-label="Diminuir">−</button>
+          <output id="qVal">1</output>
+          <button id="qPlus" aria-label="Aumentar">+</button>
+        </div>
+      </div>
+
+      <div class="buyrow">
+        <button class="btn btn--solid" id="addBag">Adicionar à sacola</button>
+        <a class="btn btn--ghost" href="${WHATS}" target="_blank" rel="noopener">Tirar dúvida</a>
+      </div>
+
+      <div class="note"><span><b>Pagamento online em breve.</b> A sacola já monta o seu pedido; a finalização com cartão e Pix entra no ar na próxima etapa.</span></div>
+
+      <div class="trust">
+        <span>Frete grátis acima de R$ 399</span><span>Troca em 30 dias</span><span>Envio em 48h úteis</span>
+      </div>
+
+      <div class="acc">
+        <details open>
+          <summary>Tecido e composição</summary>
+          <div class="accbody">${esc(p.tecido)}. Composição 88% poliamida / 12% elastano, com toque seco, proteção UV e opacidade testada no agachamento. Costura overloque reforçada e etiqueta impressa — sem atrito na pele.</div>
+        </details>
+        <details>
+          <summary>Cuidados com a peça</summary>
+          <div class="accbody">Lave à mão ou no ciclo delicado com água fria e do avesso. Não use amaciante, não torça e seque à sombra. Nada de secadora, ferro ou alvejante — é o que mantém a compressão por muito mais tempo.</div>
+        </details>
+        <details>
+          <summary>Entrega e devolução</summary>
+          <div class="accbody">Produção e expedição em Goiânia · GO, com postagem em até 48h úteis. Frete grátis para pedidos acima de R$ 399. Você tem 30 dias para trocar ou devolver a peça sem uso e com a etiqueta.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec wrap">
+    <div class="sec__head"><div><span class="eyebrow">Complete o look</span><h2 class="serif">Combina com</h2></div><a class="link-u" href="#/loja">Ver tudo</a></div>
+    <div class="grid grid--3">${relacionados.map(cardHTML).join('')}</div>
+  </section>`;
+}
+
+function pageSobre() {
+  return `
+  <section class="pagehead wrap">
+    <div class="crumbs"><a href="#/">Início</a> / A marca</div>
+    <h1 class="serif" style="font-size:clamp(34px,5.4vw,64px);max-width:15ch">Roupa que acompanha o seu ritmo.</h1>
+  </section>
+
+  <section class="sec wrap">
+    <div class="duo" style="align-items:start">
+      <div class="stack">
+        <span class="eyebrow">A AMICIS</span>
+        <p class="lede">A AMICIS nasceu em Goiânia da vontade de resolver um problema simples e teimoso: encontrar roupa de treino que sustente de verdade, não fique transparente e ainda assim tenha cara de peça bonita.</p>
+        <p class="lede">Como a produção é nossa, do risco ao acabamento, conseguimos testar cada modelagem em corpos diferentes antes de liberar a peça — e ajustar o que não ficou bom. É por isso que a grade vai do PP ao GG com a mesma atenção em todos os tamanhos.</p>
+        <p class="lede">Hoje atendemos varejo pelo site e atacado para lojistas de todo o país, com a mesma peça e o mesmo tecido. Sem linha “de revenda”.</p>
+        <a class="btn btn--solid" href="#/loja">Conhecer as peças</a>
+      </div>
+      <div>${ph('sage', 'ph--tall')}</div>
+    </div>
+  </section>
+
+  <section class="edit">
+    <div class="wrap" style="padding-block:clamp(48px,6vw,84px)">
+      <div class="grid grid--3" style="gap:clamp(24px,3vw,44px)">
+        <div class="stack"><h3 class="serif" style="color:inherit">Tecido premium</h3><p style="color:color-mix(in srgb, var(--on-sage) 76%, transparent)">Poliamida de alta gramatura (280 a 360 g/m²), toque seco, proteção UV e opacidade testada peça por peça.</p></div>
+        <div class="stack"><h3 class="serif" style="color:inherit">Compressão perfeita</h3><p style="color:color-mix(in srgb, var(--on-sage) 76%, transparent)">Cós alto que não enrola, costura plana que não marca e elastano na medida certa para sustentar sem apertar.</p></div>
+        <div class="stack"><h3 class="serif" style="color:inherit">Fabricação própria</h3><p style="color:color-mix(in srgb, var(--on-sage) 76%, transparent)">Da modelagem à expedição, tudo acontece na nossa fábrica em Goiânia. Preço justo e prazo que a gente controla.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec wrap" id="provador">
+    <div class="sec__head"><div><span class="eyebrow">Provador</span><h2 class="serif">Guia de medidas</h2></div></div>
+    <p class="lede" style="margin-bottom:26px">Meça com a fita rente ao corpo, sem apertar, sobre roupa leve. Entre dois tamanhos, prefira o maior se você gosta de compressão média e o menor se gosta de compressão firme.</p>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Tamanho</th><th>Busto (cm)</th><th>Cintura (cm)</th><th>Quadril (cm)</th><th>Manequim BR</th></tr></thead>
+        <tbody>${MEDIDAS.map(r => `<tr><th scope="row">${r[0]}</th><td>${r[1]}</td><td>${r[2]}</td><td>${r[3]}</td><td>${r[4]}</td></tr>`).join('')}</tbody>
+      </table>
+    </div>
+  </section>`;
+}
+
+function pageAtacado() {
+  const faixas = [
+    ['12 a 35 peças', 'Grade sortida', '−30% sobre o varejo'],
+    ['36 a 99 peças', 'Grade fechada ou sortida', '−40% sobre o varejo'],
+    ['100+ peças',    'Grade fechada', 'Tabela negociada']
+  ];
+  return `
+  <section class="pagehead wrap">
+    <div class="crumbs"><a href="#/">Início</a> / Atacado</div>
+    <span class="eyebrow">Club Amicis</span>
+    <h1 class="serif" style="font-size:clamp(34px,5.4vw,62px);margin-top:10px;max-width:16ch">Revenda com preço de fábrica.</h1>
+    <p class="lede" style="margin-top:14px">Somos fábrica, não distribuidora. Você compra a mesma peça do varejo, com a mesma etiqueta e o mesmo tecido — pagando preço de produção.</p>
+  </section>
+
+  <section class="sec wrap">
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Volume do pedido</th><th>Formato da grade</th><th>Condição</th></tr></thead>
+        <tbody>${faixas.map(f => `<tr><th scope="row" style="font-size:16px">${f[0]}</th><td>${f[1]}</td><td>${f[2]}</td></tr>`).join('')}</tbody>
+      </table>
+    </div>
+    <p class="count" style="margin-top:14px">Valores de referência · a tabela oficial é enviada junto com o catálogo.</p>
+  </section>
+
+  <section class="sec sec--tight wrap">
+    <div class="duo">
+      <div class="panel">
+        <span class="eyebrow">Como funciona</span>
+        <ul>
+          <li>Pedido mínimo de 12 peças, podendo misturar modelos.</li>
+          <li>Catálogo com fotos em alta e tabela de preço por WhatsApp.</li>
+          <li>Pagamento por Pix, boleto ou cartão em até 6x.</li>
+          <li>Produção e envio em até 10 dias úteis para todo o Brasil.</li>
+          <li>Etiqueta neutra ou personalizada sob consulta.</li>
+        </ul>
+      </div>
+      <div class="panel panel--ink">
+        <span class="eyebrow">Solicite o catálogo</span>
+        <h3 class="serif" style="color:inherit">Conte um pouco sobre a sua loja</h3>
+        <form class="form" style="width:100%" data-demo>
+          <label class="field"><span>Nome</span><input name="nome" placeholder="Seu nome" required></label>
+          <label class="field"><span>Loja / CNPJ</span><input name="loja" placeholder="Nome da loja" required></label>
+          <label class="field"><span>WhatsApp</span><input name="fone" placeholder="(62) 90000-0000" required></label>
+          <label class="field"><span>Cidade / UF</span><input name="cidade" placeholder="Goiânia / GO" required></label>
+          <label class="field full"><span>O que você procura</span><textarea name="msg" placeholder="Ex.: conjuntos e leggings, grade P ao GG, 24 peças para começar"></textarea></label>
+          <button class="btn btn--sage full" type="submit">Enviar solicitação</button>
+        </form>
+        <a class="link-u" href="${WHATS}" target="_blank" rel="noopener">Ou fale agora no WhatsApp</a>
+      </div>
+    </div>
+  </section>`;
+}
+
+function pageContato() {
+  return `
+  <section class="pagehead wrap">
+    <div class="crumbs"><a href="#/">Início</a> / Contato</div>
+    <h1 class="serif" style="font-size:clamp(34px,5.4vw,62px)">Fale com a AMICIS</h1>
+    <p class="lede" style="margin-top:14px">Dúvida de tamanho, status do pedido, troca ou atacado — estamos por aqui de segunda a sexta, das 9h às 18h.</p>
+  </section>
+
+  <section class="sec wrap">
+    <div class="duo">
+      <div class="stack">
+        <div class="panel" style="width:100%">
+          <span class="eyebrow">Canais</span>
+          <ul style="list-style:none;padding:0">
+            <li><a class="link-u" href="${WHATS}" target="_blank" rel="noopener">WhatsApp da loja</a></li>
+            <li style="margin-top:14px"><a class="link-u" href="${INSTA}" target="_blank" rel="noopener">@amicisfitness no Instagram</a></li>
+            <li style="margin-top:14px;color:var(--ink-2)">contato@amicisfitness.com.br</li>
+            <li style="margin-top:14px;color:var(--ink-2)">Goiânia · GO — atendimento online</li>
+          </ul>
+        </div>
+        <div class="panel" style="width:100%">
+          <span class="eyebrow">Trocas e devoluções</span>
+          <p style="color:var(--ink-2)">Você tem 30 dias corridos a partir do recebimento para trocar ou devolver uma peça sem uso e com a etiqueta. A primeira troca por tamanho tem frete por nossa conta.</p>
+        </div>
+      </div>
+      <div class="panel">
+        <span class="eyebrow">Mande uma mensagem</span>
+        <form class="form" style="width:100%" data-demo>
+          <label class="field"><span>Nome</span><input name="nome" placeholder="Seu nome" required></label>
+          <label class="field"><span>E-mail</span><input type="email" name="email" placeholder="voce@email.com" required></label>
+          <label class="field full"><span>Assunto</span><input name="assunto" placeholder="Pedido, troca, tamanho..."></label>
+          <label class="field full"><span>Mensagem</span><textarea name="msg" placeholder="Como podemos ajudar?"></textarea></label>
+          <button class="btn btn--solid full" type="submit">Enviar</button>
+        </form>
+      </div>
+    </div>
+  </section>`;
+}
+
+/* ==========================================================
+   5. ROTEADOR
+   ========================================================== */
+
+function rota() {
+  const raw = (location.hash || '#/').slice(1);
+  const [path, qs] = raw.split('?');
+  const params = new URLSearchParams(qs || '');
+  const seg = path.split('/').filter(Boolean);
+  const view = $('#view');
+
+  let html, titulo = 'AMICIS FITNESS';
+  if (seg[0] === 'loja')        { html = pageLoja(params); titulo = 'Loja · AMICIS FITNESS'; }
+  else if (seg[0] === 'produto'){ const p = prod(seg[1]); html = pageProduto(seg[1]); titulo = (p ? p.nome + ' · ' : '') + 'AMICIS FITNESS'; }
+  else if (seg[0] === 'sobre')  { html = pageSobre();   titulo = 'A marca · AMICIS FITNESS'; }
+  else if (seg[0] === 'atacado'){ html = pageAtacado(); titulo = 'Atacado · AMICIS FITNESS'; }
+  else if (seg[0] === 'contato'){ html = pageContato(); titulo = 'Contato · AMICIS FITNESS'; }
+  else                          { html = pageHome(); }
+
+  view.innerHTML = html;
+  document.title = titulo;
+
+  const atual = '/' + seg.join('/') + (params.get('cat') ? '?cat=' + params.get('cat') : '');
+  document.querySelectorAll('.nav a').forEach(a => {
+    a.toggleAttribute('aria-current', a.dataset.route === atual);
+    if (a.dataset.route === atual) a.setAttribute('aria-current', 'page');
+  });
+
+  $('#nav').classList.remove('open');
+  $('#burger').setAttribute('aria-expanded', 'false');
+  if (seg[0] === 'sobre' && params.get('ir') === 'provador') {
+    const el = $('#provador');
+    if (el) { el.scrollIntoView({ block: 'start' }); ligarPDP(); return; }
+  }
+  window.scrollTo(0, 0);
+  ligarPDP();
+}
+
+/* ---- interações da página de produto ---- */
+function ligarPDP() {
+  const pdp = document.querySelector('[data-pdp]');
+  if (!pdp) return;
+  const p = prod(pdp.dataset.pdp);
+  let cor = p.cores[0], tam = 'M', qtd = 1;
+
+  const repintarGaleria = () => {
+    $('#gal').innerHTML = ph(cor) + ph(cor, 'ph--sq') + ph(cor, 'ph--sq');
+  };
+
+  $('#cores').addEventListener('click', e => {
+    const b = e.target.closest('[data-cor]'); if (!b) return;
+    cor = b.dataset.cor;
+    $('#cores').querySelectorAll('.color').forEach(x => x.setAttribute('aria-pressed', x === b));
+    $('#corNome').textContent = CORES[cor].nome;
+    repintarGaleria();
+  });
+
+  $('#tams').addEventListener('click', e => {
+    const b = e.target.closest('[data-tam]'); if (!b) return;
+    tam = b.dataset.tam;
+    $('#tams').querySelectorAll('.size').forEach(x => x.setAttribute('aria-pressed', x === b));
+  });
+
+  $('#qMinus').addEventListener('click', () => { qtd = Math.max(1, qtd - 1); $('#qVal').textContent = qtd; });
+  $('#qPlus').addEventListener('click',  () => { qtd = Math.min(20, qtd + 1); $('#qVal').textContent = qtd; });
+
+  $('#addBag').addEventListener('click', () => {
+    addSacola({ slug:p.slug, nome:p.nome, preco:p.preco, cor, tam, qtd });
+  });
+}
+
+/* ==========================================================
+   6. EVENTOS GLOBAIS
+   ========================================================== */
+
+window.addEventListener('hashchange', rota);
+
+$('#burger').addEventListener('click', () => {
+  const n = $('#nav'), open = n.classList.toggle('open');
+  $('#burger').setAttribute('aria-expanded', String(open));
+});
+
+$('#openBag').addEventListener('click', abrirSacola);
+$('#closeBag').addEventListener('click', fecharSacola);
+$('#scrim').addEventListener('click', fecharSacola);
+document.addEventListener('keydown', e => { if (e.key === 'Escape') fecharSacola(); });
+
+$('#bagList').addEventListener('click', e => {
+  const rm = e.target.closest('[data-rm]');
+  if (rm) { removeSacola(Number(rm.dataset.rm)); return; }
+  if (e.target.closest('[data-closebag]')) fecharSacola();
+});
+
+document.addEventListener('change', e => {
+  if (e.target.id === 'ordem') {
+    const params = new URLSearchParams((location.hash.split('?')[1]) || '');
+    params.set('ordem', e.target.value);
+    location.hash = '#/loja?' + params.toString();
+  }
+});
+
+document.addEventListener('submit', e => {
+  if (!e.target.matches('[data-demo]')) return;
+  e.preventDefault();
+  aviso('Formulário de demonstração — o envio será ligado junto com o back-end');
+});
+
+pintarSacola();
+rota();
+})();
+</script>
+
+</body>
+</html>
